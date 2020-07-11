@@ -1,6 +1,9 @@
+import 'package:bike_parking_info/screen/home_screen.dart';
+import 'package:bike_parking_info/screen/list_screen.dart';
+import 'package:bike_parking_info/screen/more_screen.dart';
+import 'package:bike_parking_info/screen/search_screen.dart';
 import 'package:bike_parking_info/widget/bottom_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:webview_flutter/webview_flutter.dart';
 
 void main() => runApp(MyApp());
 
@@ -25,26 +28,10 @@ class _MyAppState extends State<MyApp> {
             body: TabBarView(
               physics: NeverScrollableScrollPhysics(),
               children: <Widget>[
-                Container(
-                  child: Center(
-                    child: Text('home'),
-                  ),
-                ),
-                Container(
-                  child: Center(
-                    child: Text('search'),
-                  ),
-                ),
-                Container(
-                  child: Center(
-                    child: Text('save'),
-                  ),
-                ),
-                Container(
-                  child: Center(
-                    child: Text('more'),
-                  ),
-                ),
+                HomeScreen(),
+                SearchScreen(),
+                MoreScreen(),
+                ListScreen(),
                 ],
             ),
             bottomNavigationBar: Bottom(),
