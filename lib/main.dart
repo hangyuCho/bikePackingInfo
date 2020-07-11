@@ -1,41 +1,55 @@
+import 'package:bike_parking_info/widget/bottom_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
-void main() {
-  runApp(MyApp());
+void main() => runApp(MyApp());
+
+class MyApp extends StatefulWidget {
+    _MyAppState createState() => _MyAppState();
 }
 
-
-class MyApp extends StatelessWidget {
+class _MyAppState extends State<MyApp> {
+  TabController controller;
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'バイク駐車',
-      home: MyHomePage(title: "バイク駐車しようぜ！"),
-    );
-  }
-}
-
-
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
-  final String title;
-
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-        backgroundColor: Color.fromARGB(100, 255, 255, 255)
-      ),
-      body: WebView(
-        initialUrl: 'https://www.jmpsa.or.jp/society/parking/',
-      )
+      title: 'hogehoge',
+      theme: ThemeData(
+        brightness: Brightness.dark,
+        primaryColor: Colors.black,
+        accentColor: Colors.white,
+        ),
+        home: DefaultTabController(
+          length: 4,
+          child: Scaffold(
+            body: TabBarView(
+              physics: NeverScrollableScrollPhysics(),
+              children: <Widget>[
+                Container(
+                  child: Center(
+                    child: Text('home'),
+                  ),
+                ),
+                Container(
+                  child: Center(
+                    child: Text('search'),
+                  ),
+                ),
+                Container(
+                  child: Center(
+                    child: Text('save'),
+                  ),
+                ),
+                Container(
+                  child: Center(
+                    child: Text('more'),
+                  ),
+                ),
+                ],
+            ),
+            bottomNavigationBar: Bottom(),
+          ),
+        ),
     );
   }
 }
