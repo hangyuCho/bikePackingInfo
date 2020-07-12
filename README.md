@@ -1,5 +1,5 @@
 # bike_parking_info
-
+![homescreen](./images/home.png)
 A new Flutter project.
 
 ## Getting Started
