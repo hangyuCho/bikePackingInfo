@@ -23,7 +23,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  carousel_slider: 
+  intl: ^0.16.1
+  carousel_slider: ^2.0.0
   webview_flutter:
 
 
